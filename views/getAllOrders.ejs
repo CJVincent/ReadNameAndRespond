@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div class="container">
+    <h2>Database Results getting Orders </h2>
+    <ul>
+        <%
+        data.forEach(function(d) { %>
+        <li>Order ID:<%= d._id%></li>
+        <ul>
+            <li>Customer ID:<%=d.CUSTOMER_ID %></li>
+            <li>Billing ID:<%=d.BILLING_ID %></li>
+            <li>Shipping ID:<%=d.SHIPPING_ID %></li>
+            <li>Date:<%=d.DATE %></li>
+            <li>Product Vector:<%=d.PRODUCT_VECTOR %></li>
+            <li>Order Total:$<%=d.ORDER_TOTAL %></li>
+        </ul>
+        <br/><br/>
+        <% }); %>
+    </ul>
+</div>
+</body>
+</html>

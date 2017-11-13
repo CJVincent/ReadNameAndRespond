@@ -4,7 +4,7 @@ module.exports.index = function(req, res, next) {
     res.render('index', { title: 'Express' });
 };
 
-module.exports.getDB = function(req, res, next) {
+module.exports.getAllOrders = function(req, res, next) {
     mongodb.connect(mongoDBURI, function(err, db) {
         if (err) throw err;
 
@@ -12,7 +12,7 @@ module.exports.getDB = function(req, res, next) {
         dbColl.find({ }).toArray(function(err, docs) {
             if (err) throw err;
             console.log(docs);
-            res.render('db', { data: JSON.stringify(docs)});
+            res.render('getAllOrders', { data: docs});
         });
 
         db.close(function (err) {
